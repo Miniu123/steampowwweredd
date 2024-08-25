@@ -1,0 +1,163 @@
+/* Resetowanie marginesów i wypełnienia */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tło strony */
+body {
+    font-family: Arial, sans-serif;
+	background-image: url(kutas.png);
+    background-color: #171d25; /* Ciemnoszare tło, podobne do Steam */
+    color: #fff; /* Biały kolor tekstu */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Kontener logowania */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ramka logowania */
+.login-box {
+    background: #181a21; /* Ciemniejsze tło dla formularza */
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 40px;
+    width: 100%;
+    width: 370px;
+    text-align: center;
+    grid-column: 1;
+    grid-row: 1 / 1;
+}
+
+.logbox {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    display: grid;
+}
+
+.loginboxqr {
+    background: #181a21; /* Ciemniejsze tło dla formularza */
+    padding: 20px;
+    width: 100%;
+    width: 370px;
+    text-align: center;
+    grid-column: 2;
+    grid-row: 1 / 1;
+    align-items: center;
+}
+
+.qrkod{
+    width: 65%;
+    height: 65%;
+    margin: 20px;
+}
+
+.qrnapis {
+    font-size: larger;
+    color: #00bfff;
+}
+
+.qrnapis2 {
+    font-size: small;
+    color: #888;
+}
+
+/* Logo Steam */
+.logo {
+    width: 200px; /* Szerokość logo */
+    margin-bottom: 20px;
+}
+
+/* Nagłówek */
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Style dla pól tekstowych */
+.textbox {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/* Style dla inputów */
+.textbox input {
+    width: 50%;
+    padding: 10px;
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    color: #fff;
+}
+
+/* Style dla etykiet */
+.textbox label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 12px;
+    color: #888;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+/* Efekt animacji etykiety */
+.textbox input:focus + label,
+.textbox input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 5px;
+    font-size: 10px;
+    color: #fff;
+}
+
+/* Przycisk logowania */
+.btn {
+	background: linear-gradient(90deg, #07bcff, #297aff); /* Gradient background */
+	border: none;
+	color: white; /* White text */
+	width: 200px; /* Width of the button */
+	height: 40px; /* Height of the button */
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px; /* Font size */
+	line-height: 40px; /* Center text vertically */
+	cursor: pointer;
+	border-radius: 1px; /* Rounded corners */
+	transition: background-color 0.3s ease;
+}
+
+/* Efekt najechania na przycisk */
+.btn:hover {
+    background: #009acd;
+}
+
+/* Sekcja stopki */
+.footer {
+    margin-top: 20px;
+}
+
+.footer a {
+	color: #00bfff;
+    text-decoration: none;
+    display: block;
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Efekt najechania na linki w stopce */
+.footer a:hover {
+    text-decoration: underline;
+}
+
+

